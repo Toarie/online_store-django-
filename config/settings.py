@@ -1,4 +1,8 @@
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -50,8 +54,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'online_store',
+        'USER': 'store_user',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c client_encoding=UTF8'
+        }
     }
 }
 
@@ -80,6 +91,9 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+MEDIA_URL = '/media/'  # URL-префикс для медиафайлов
+MEDIA_ROOT = BASE_DIR / 'media'  # Путь к папке с медиафайлами
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
