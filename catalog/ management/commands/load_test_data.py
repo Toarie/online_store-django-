@@ -1,18 +1,17 @@
 from django.core.management.base import BaseCommand
-from catalog.models import Product, Category
 from django.core.management import call_command
 
 
 class Command(BaseCommand):
-    help = 'Загружает тестовые данные в базу'
+    help = 'Load test data from fixtures'
 
     def handle(self, *args, **options):
-        Product.objects.all().delete()
-        Category.objects.all().delete()
+        # Clear old data
+        call_command('flush', '--noinput')
 
-        call_command('loaddata', 'categories.json')
-        call_command('loaddata', 'products.json')
+        # Load fixtures
+        call_command('loaddata', 'categories.json', verbosity=2)
+        call_command('loaddata', 'products.json', verbosity=2)
 
-        latest_products = Product.objects.order_by('-created_at')[:5]
-        for product in latest_products:
-            self.stdout.write(f"{product.name} - {product.price} руб.")
+        self.stdout.write(self.style.SUCCESS('✅ Данные успешно загружены!'))
+
