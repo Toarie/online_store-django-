@@ -4,7 +4,28 @@
         "pk": 1,
         "fields": {
             "name": "Электроника",
-            "description": "Техника и гаджеты"
+            "description": "Техника и гаджеты",
+            "slug": "electronics"
+        }
+    },
+    {
+        "model": "catalog.category",
+        "pk": 2,
+        "fields": {
+            "name": "Одежда",
+            "description": "Мужская и женская одежда",
+            "slug": "clothes"
+        }
+    },
+    {
+        "model": "catalog.category",
+        "pk": 3,
+        "fields": {
+            "name": "Книги",
+            "description": "Художественная и профессиональная литература",
+            "slug": "books"
         }
     }
 ]
+
+

@@ -2,6 +2,7 @@ import os
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
+os.environ["PGCLIENTENCODING"] = "UTF-8"
 
 # Фикс кодировки для Windows
 if sys.platform == 'win32':
@@ -103,9 +104,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Дополнительные настройки
-FIXTURE_DIRS = [BASE_DIR / 'catalog/fixtures']  # Путь к фикстурам
 
 # Настройки для работы с изображениями
 if DEBUG:
