@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0388c48-d0f9-4fc1-b749-8f18af262042" name="Changes" comment="&#10;Реализована кастомная команда для загрузки объектов,созданы и запушены миграции с полями моделей.">
-      <change afterPath="$PROJECT_DIR$/templates/catalog/_navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/catalog/product_detail.html" afterDir="false" />
+    <list default="true" id="c0388c48-d0f9-4fc1-b749-8f18af262042" name="Changes" comment="незначительные изменения">
+      <change afterPath="$PROJECT_DIR$/catalog/templatetags/my_tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/fixtures/categories.json" beforeDir="false" afterPath="$PROJECT_DIR$/categories.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/fixtures/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/catalog/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/catalog/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/catalog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/catalog/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -62,13 +67,23 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Python.runserver.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature/templating__lesson24",
-    "last_opened_file_path": "C:/Users/reyts/Desktop",
-    "settings.editor.selected.configurable": "File.Encoding"
+    "last_opened_file_path": "C:/Users/reyts/PycharmProjects/online_store_django/manage.py",
+    "settings.editor.selected.configurable": "terminal"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\reyts\PycharmProjects\online_store_django\catalog" />
+      <recent name="C:\Users\reyts\PycharmProjects\online_store_django\templates\catalog" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\reyts\PycharmProjects\online_store_django" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.runserver">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="online_store_django" />
       <option name="ENV_FILES" value="" />
@@ -91,6 +106,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="runserver" type="PythonConfigurationType" factoryName="Python">
+      <module name="online_store_django" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Poetry (online_store_django)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.runserver" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -164,8 +206,35 @@
       <option name="project" value="LOCAL" />
       <updated>1745955270128</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="незначительные изменения">
+      <option name="closed" value="true" />
+      <created>1746797210015</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746797210015</updated>
+    </task>
+    <task id="LOCAL-00009" summary="незначительные изменения">
+      <option name="closed" value="true" />
+      <created>1747045694935</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747045694935</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлен README.md" />
@@ -176,6 +245,7 @@
     <MESSAGE value="Удаление .env из репозитория" />
     <MESSAGE value="&#10;&quot;Исправление всех замечаний: окружение, миграции, фикстуры, команда&quot;" />
     <MESSAGE value="&#10;Реализована кастомная команда для загрузки объектов,созданы и запушены миграции с полями моделей." />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;Реализована кастомная команда для загрузки объектов,созданы и запушены миграции с полями моделей." />
+    <MESSAGE value="незначительные изменения" />
+    <option name="LAST_COMMIT_MESSAGE" value="незначительные изменения" />
   </component>
 </project>
