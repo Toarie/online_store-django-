@@ -10,4 +10,4 @@ __pycache__/
 /staticfiles/
 .DS_Store
 .venv/
-venv/
+venv/".idea/" 
