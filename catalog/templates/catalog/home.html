@@ -1,16 +1,17 @@
 {% extends 'catalog/base.html' %}
-
+{% load my_tags %}
 {% block content %}
     <h1>Товары</h1>
 
     <div class="products">
         {% for product in products %}
         <div class="product">
-            <img src="{{ product.image.url }}" alt="{{ product.name }}">
-            <h2><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h2>
+            <img src="{{ product.image | media_filter }}" alt="{{ product.name }}">
+            <h2><a href="#">{{ product.name }}</a></h2>
             <p class="description">{{ product.description|truncatechars:100 }}</p>
         </div>
         {% endfor %}
     </div>
 {% endblock %}
 
+<!--            <h2><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h2>-->
