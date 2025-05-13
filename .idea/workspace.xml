@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0388c48-d0f9-4fc1-b749-8f18af262042" name="Changes" comment="Исправлено отображение изображений товаров">
-      <change afterPath="$PROJECT_DIR$/.idea/online_store_django.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/migrations/0002_alter_product_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templatetags/my_tags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/fixtures/categories.json" beforeDir="false" afterPath="$PROJECT_DIR$/categories.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/fixtures/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/products.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-    </list>
+    <list default="true" id="c0388c48-d0f9-4fc1-b749-8f18af262042" name="Changes" comment="Исправлено отображение изображений товаров" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,16 +51,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.runserver.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/templating__lesson24",
-    "last_opened_file_path": "C:/Users/reyts/PycharmProjects/online_store_django/manage.py",
-    "settings.editor.selected.configurable": "terminal"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.runserver.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/templating__lesson24&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/reyts/PycharmProjects/online_store_django/manage.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\reyts\PycharmProjects\online_store_django\catalog" />
