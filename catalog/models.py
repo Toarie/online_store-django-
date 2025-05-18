@@ -18,7 +18,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
-    image = models.ImageField(upload_to='products/', blank=True, null=True, verbose_name='Изображение')
+    image = models.ImageField(upload_to='products/', blank=True, null=True, verbose_name='Изображение')  # Ваш вариант с null=True
     in_stock = models.BooleanField(default=True, verbose_name='В наличии')
 
     class Meta:
@@ -28,5 +28,7 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.price})"
+
+
 
 
