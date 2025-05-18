@@ -1,5 +1,5 @@
 {% extends 'catalog/base.html' %}
-{% load my_tags %}  <!-- Ваш кастомный тег для изображений -->
+{% load my_tags %}
 
 {% block content %}
     <h1>Товары</h1>
@@ -7,8 +7,8 @@
     <div class="products">
         {% for product in products %}
         <div class="product">
-            <img src="{{ product.image | media_filter }}" alt="{{ product.name }}">  <!-- Ваш фильтр -->
-            <h2><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h2>  <!-- Рабочая ссылка -->
+            <img src="{{ product.image|media_filter }}" alt="{{ product.name }}">
+            <h2><a href="{% url 'catalog:product_detail' product.pk %}">{{ product.name }}</a></h2>
             <p class="description">{{ product.description|truncatechars:100 }}</p>
         </div>
         {% endfor %}

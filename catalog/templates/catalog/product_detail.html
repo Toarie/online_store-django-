@@ -1,12 +1,11 @@
-{% extends 'catalog/base.html' %}
+{% extends "catalog/base.html" %}
+{% load my_tags %}
 
 {% block content %}
-    <div class="product-detail">
-        <img src="{{ product.image.url }}" alt="{{ product.name }}">
-        <h1>{{ product.name }}</h1>
-        <p>{{ product.description }}</p>
-        <p>Цена: {{ product.price }} руб.</p>
-        <a href="{% url 'home' %}">Назад к списку товаров</a>
-    </div>
+    <h1>{{ product.name }}</h1>
+    <img src="{{ product.image|media_filter }}" alt="{{ product.name }}">
+    <p>{{ product.description }}</p>
+    <p>Цена: {{ product.price }}</p>
+    <a href="{% url 'catalog:home' %}">Назад к списку товаров</a>
 {% endblock %}
 
