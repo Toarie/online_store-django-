@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'catalog.apps.CatalogConfig',
+    'catalog.apps.CatalogConfig',  # Приложение catalog
 ]
 
 MIDDLEWARE = [
@@ -53,7 +53,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Настройки PostgreSQL (ВАШ ВАРИАНТ)
+# Настройки PostgreSQL
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -87,10 +87,10 @@ USE_TZ = True
 
 # Статические файлы
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+# STATICFILES_DIRS = [BASE_DIR / 'static']  # Раскомментировать, если нужны дополнительные директории
 
-# Медиа-файлы (ВАШ ВАРИАНТ БЕЗ СЛЕША)
-MEDIA_URL = 'media/'
+# Медиа-файлы
+MEDIA_URL = '/media/'  # Добавлен слеш для корректной работы
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
