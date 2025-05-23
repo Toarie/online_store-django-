@@ -3,7 +3,6 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название')
     description = models.TextField(blank=True, verbose_name='Описание')
-    slug = models.SlugField(max_length=100, unique=True, blank=True)  # Добавляем поле slug
 
     class Meta:
         verbose_name = 'Категория'
@@ -19,8 +18,8 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
-    image = models.ImageField(upload_to='products/', blank=True, verbose_name='Изображение')
-    in_stock = models.BooleanField(default=True, verbose_name='В наличии')  # Добавляем поле in_stock
+    image = models.ImageField(upload_to='products/', blank=True, null=True, verbose_name='Изображение')  # Ваш вариант с null=True
+    in_stock = models.BooleanField(default=True, verbose_name='В наличии')
 
     class Meta:
         verbose_name = 'Товар'
@@ -29,4 +28,7 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.price})"
+
+
+
 

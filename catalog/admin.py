@@ -4,7 +4,7 @@ from .models import Category, Product
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
-    prepopulated_fields = {'slug': ('name',)}  # Теперь поле slug есть в модели
+    # prepopulated_fields = {'slug': ('name',)}  # Теперь поле slug есть в модели
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
