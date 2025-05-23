@@ -1,11 +1,11 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from catalog import views
+from catalog.views import HomeView, ContactsView  # Импортируем CBV
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Главная страница
-    path('contacts/', views.contacts, name='contacts'),  # Страница контактов
+    path('', HomeView.as_view(), name='home'),  # Используем as_view()
+    path('contacts/', ContactsView.as_view(), name='contacts'),
 ]
 
 # Обработка медиафайлов и статических файлов в режиме разработки
