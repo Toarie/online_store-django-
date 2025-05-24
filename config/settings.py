@@ -88,10 +88,10 @@ USE_TZ = True
 
 # Статические файлы
 STATIC_URL = 'static/'
-# STATICFILES_DIRS = [BASE_DIR / 'static']  # Раскомментировать, если нужны дополнительные директории
+# STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Медиа-файлы
-MEDIA_URL = '/media/'  # Добавлен слеш для корректной работы
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
