@@ -1,33 +1,51 @@
-from django.views.generic import TemplateView
-from django.views import View
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product
+from .forms import ProductForm  # Импорт новой формы
 
-class HomeView(TemplateView):
-    template_name = 'catalog/home.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['products'] = Product.objects.all()
-        return context
-
-class ContactsView(View):
-    template_name = 'catalog/contacts.html'
-
-    def get(self, request):
-        return render(request, self.template_name)
-
-    def post(self, request):
-        name = request.POST.get('name')
-        phone = request.POST.get('phone')
-        message = request.POST.get('message')
-        print(f'Новое сообщение от {name} ({phone}): {message}')
-        return render(request, self.template_name)
+def home(request):
+    products = Product.objects.all()
+    return render(request, 'catalog/home.html', {'products': products})
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
     return render(request, 'catalog/product_detail.html', {'product': product})
 
+def contacts(request):
+    return render(request, 'catalog/contacts.html')
 
+def product_list(request):
+    """Список всех продуктов для CRUD операций"""
+    products = Product.objects.all()
+    return render(request, 'catalog/product_list.html', {'products': products})
 
+def product_create(request):
+    """Создание нового продукта"""
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('catalog:product_list')
+    else:
+        form = ProductForm()
+    return render(request, 'catalog/product_form.html', {'form': form})
+
+def product_update(request, pk):
+    """Редактирование существующего продукта"""
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect('catalog:product_detail', pk=product.pk)
+    else:
+        form = ProductForm(instance=product)
+    return render(request, 'catalog/product_form.html', {'form': form})
+
+def product_delete(request, pk):
+    """Удаление продукта"""
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'POST':
+        product.delete()
+        return redirect('catalog:product_list')
+    return render(request, 'catalog/product_confirm_delete.html', {'product': product})
 
