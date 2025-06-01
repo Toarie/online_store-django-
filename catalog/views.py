@@ -1,25 +1,25 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import DetailView
 from .models import Product
-from .forms import ProductForm  # Импорт новой формы
+from .forms import ProductForm
 
 def home(request):
     products = Product.objects.all()
     return render(request, 'catalog/home.html', {'products': products})
 
-def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    return render(request, 'catalog/product_detail.html', {'product': product})
-
 def contacts(request):
     return render(request, 'catalog/contacts.html')
 
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'catalog/product_detail.html'
+    context_object_name = 'product'
+
 def product_list(request):
-    """Список всех продуктов для CRUD операций"""
     products = Product.objects.all()
     return render(request, 'catalog/product_list.html', {'products': products})
 
 def product_create(request):
-    """Создание нового продукта"""
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -30,7 +30,6 @@ def product_create(request):
     return render(request, 'catalog/product_form.html', {'form': form})
 
 def product_update(request, pk):
-    """Редактирование существующего продукта"""
     product = get_object_or_404(Product, pk=pk)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -42,7 +41,6 @@ def product_update(request, pk):
     return render(request, 'catalog/product_form.html', {'form': form})
 
 def product_delete(request, pk):
-    """Удаление продукта"""
     product = get_object_or_404(Product, pk=pk)
     if request.method == 'POST':
         product.delete()
