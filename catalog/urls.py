@@ -1,15 +1,22 @@
-from django.conf import settings
-from django.conf.urls.static import static
 from django.urls import path
-from catalog import views
+from .views import (
+    home,
+    contacts,
+    ProductDetailView,
+    product_list,
+    product_create,
+    product_update,
+    product_delete
+)
+
+app_name = 'catalog'
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Главная страница
-    path('contacts/', views.contacts, name='contacts'),  # Страница контактов
+    path('', home, name='home'),
+    path('contacts/', contacts, name='contacts'),
+    path('product/<int:pk>/', ProductDetailView.as_view(), name='product_detail'),
+    path('products/', product_list, name='product_list'),
+    path('product/create/', product_create, name='product_create'),
+    path('product/<int:pk>/update/', product_update, name='product_update'),
+    path('product/<int:pk>/delete/', product_delete, name='product_delete'),
 ]
-
-# Обработка медиафайлов и статических файлов в режиме разработки
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
