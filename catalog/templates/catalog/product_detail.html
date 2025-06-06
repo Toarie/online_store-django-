@@ -1,11 +1,34 @@
-{% extends "catalog/base.html" %}
-{% load my_tags %}
+{% extends 'catalog/base.html' %}
 
 {% block content %}
-    <h1>{{ product.name }}</h1>
-    <img src="{{ product.image|media_filter }}" alt="{{ product.name }}">
-    <p>{{ product.description }}</p>
-    <p>Цена: {{ product.price }}</p>
-    <a href="{% url 'catalog:home' %}">Назад к списку товаров</a>
+<div class="container">
+    <div class="card">
+        <div class="row g-0">
+            {% if object.image %}
+            <div class="col-md-4">
+                <img src="{{ object.image.url }}" class="img-fluid rounded-start" alt="{{ object.name }}">
+            </div>
+            {% endif %}
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">{{ object.name }}</h1>
+                    <p class="card-text">{{ object.description }}</p>
+                    <p class="card-text"><strong>Цена:</strong> {{ object.price }} руб.</p>
+                    <p class="card-text"><strong>Категория:</strong> {{ object.category.name }}</p>
+                    <p class="card-text"><small class="text-muted">
+                        Создано: {{ object.created_at|date:"d.m.Y H:i" }} |
+                        Обновлено: {{ object.updated_at|date:"d.m.Y H:i" }}
+                    </small></p>
+
+                    <div class="btn-group mt-3">
+                        <a href="{% url 'catalog:product_update' object.pk %}" class="btn btn-primary">Редактировать</a>
+                        <a href="{% url 'catalog:product_delete' object.pk %}" class="btn btn-danger">Удалить</a>
+                        <a href="{% url 'catalog:product_list' %}" class="btn btn-secondary">Назад к списку</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
