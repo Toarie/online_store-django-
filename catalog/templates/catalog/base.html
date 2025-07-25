@@ -12,6 +12,16 @@
                 <a class="nav-link" href="{% url 'catalog:home' %}">Главная</a>
                 <a class="nav-link" href="{% url 'catalog:contacts' %}">Контакты</a>
             </div>
+            <!-- Добавленные кнопки входа/регистрации (новый блок) -->
+            <div class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
+                    <span class="navbar-text me-2">Привет, {{ user.email }}!</span>
+                    <a class="btn btn-outline-danger" href="{% url 'logout' %}">Выйти</a>
+                {% else %}
+                    <a class="btn btn-outline-primary me-2" href="{% url 'login' %}">Войти</a>
+                    <a class="btn btn-primary" href="{% url 'register' %}">Регистрация</a>
+                {% endif %}
+            </div>
         </div>
     </nav>
     <div class="container mt-4">
